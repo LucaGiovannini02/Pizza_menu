@@ -1,5 +1,6 @@
 import Navbar from './components/navbar';
 import Pizza from './components/pizza';
+import PizzaOnShop from './components/pizzaOnShop';
 import React, {Component} from 'react';
 
 class App extends Component {
@@ -44,11 +45,15 @@ class App extends Component {
     }
 
     const styleLeftDiv = {
-      width: "75%",
+      width: "70%",
     }
 
     const styleRightDiv = {
-      width: "25%",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      backgroundColor: "whitesmoke",
+      width: "30%",
     }
 
     return (
@@ -63,8 +68,9 @@ class App extends Component {
             ))}
           </div>
           <div style={styleRightDiv}>
+            <h2>Carello</h2>
             {this.state.order.map(pizza => (
-              <Pizza
+              <PizzaOnShop
               pizza = {pizza}
               onClick = {this.handleDeleteOrder} />
             ))}
